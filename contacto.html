@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Fundación Argentina de Jóvenes | Contacto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="images/logo.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Si te interesa trabajemos juntos! Podés encontrar la referencia al pie de la página. Se trabaja nube, desarrollo, infraestructura, IT, soporte técnico, comercialización, delivery y entrega de producto -->
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><img src="images/logo.jpg" style="width: auto;max-height: 80%;padding-top: 5%;"></a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="actividades.html">Actividades</a></li>
+											<li><a href="nosotros.html">Nosotros</a></li>
+											<li><a href="actualidad.html">Actualidad</a></li>
+											<li><a href="contacto.html">Contacto</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						
+						<section class="wrapper style5">
+							<div class="inner">
+
+								
+								
+								
+
+								<section>
+									<h4>Contacto</h4>
+									<p>Todos los mensajes se responderán inmediatamente siguiendo nuestros estándares internos para agilizar la comunicación</p>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Nombre Completo" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Elegir Asunto -</option>
+													<option value="1">Consulta General</option>
+													<option value="1">Quiero Saber Más</option>
+													<option value="1">Quiero Tomar Participación</option>
+													<option value="1">Otro</option>
+												</select>
+											</div>
+											
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Escribir Mensaje" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Enviar Mensaje" class="primary" /></li>
+													<li><input type="reset" value="reestablecer contenido" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+
+								
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					<ul class="copyright">
+							<li>&copy; FUNDACIÓN ARGENTINA DE JÓVENES</li><li>diseño: <a href="https://www.vinceremoinsieme.com">INSIEME VINCERE</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script type="text/javascript">
+				const form = document.querySelector('form');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault(); // Evitar el envío nativo del formulario
+  
+  // Obtener los valores de los campos del formulario
+  const name = document.getElementById('demo-name');
+  const email = document.getElementById('demo-email');
+  const category = document.getElementById('demo-category');
+  const message = document.getElementById('demo-message');
+  
+  // Construir el cuerpo del mensaje
+  const bodyContent = `
+    Nombre: ${name.value}<br>
+    Email: ${email.value}<br>
+    Asunto: ${category.options[category.selectedIndex].text}<br>
+    Mensaje: ${message.value}<br>
+    
+  `;
+
+  Email.send({
+    SecureToken: "5609b948-61e4-4781-aaf0-b9c1414257af",
+    To: 'grandbaudio@gmail.com',
+    From: 'grandbaudio@gmail.com',
+    Subject: category.options[category.selectedIndex].text,
+    Body: bodyContent
+  }).then(
+    message => alert("Mensaje enviado. En breve recibirás respuesta y estaremos dando forma a proyectos interesantes. ¡Lo mejor ya empezó! 🔥"),
+    error => alert("Hubo un error al enviar el mensaje. Por favor, inténtalo nuevamente.")
+  );
+});
+
+			</script>
+
+	</body>
+</html>
